@@ -1,13 +1,12 @@
 import Link from "next/link";
 
-const lessons: { [key: number]: { title: string; content: string } } = {
-  1: { title: "Basics of Investing", content: "Investing is about growing your wealth over time..." },
-  2: { title: "Managing Risk", content: "Risk management helps protect your investments..." },
+const lessons: { [key: string]: { title: string; content: string } } = {
+  "1": { title: "Basics of Investing", content: "Investing is about growing your wealth over time..." },
+  "2": { title: "Managing Risk", content: "Risk management helps protect your investments..." },
 };
 
 export default function Lesson({ params }: { params: { id: string } }) {
-  const lessonId = parseInt(params.id, 10);
-  const lesson = lessons[lessonId] || { title: "Lesson Not Found", content: "Invalid lesson ID." };
+  const lesson = lessons[Number(params.id)] || { title: "Lesson Not Found", content: "Invalid lesson ID." };
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-700 text-white p-4">

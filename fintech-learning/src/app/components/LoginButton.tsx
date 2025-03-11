@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import firebase from "firebase/compat/app";
 import { auth, provider, signInWithPopup, signOut } from "../firebase/config";
 import { User } from "firebase/auth";
 
 export default function LoginButton() {
-  const [user, setUser] = useState<null | User>(null);
+  const [user, setUser] = useState<User | null>(null);
 
   const handleLogin = async () => {
     try {
