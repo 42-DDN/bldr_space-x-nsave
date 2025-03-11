@@ -1,10 +1,15 @@
 import Link from "next/link";
+import LoginButton from "./components/LoginButton"; // Make sure to import LoginButton
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-4">
       <h1 className="text-4xl font-bold">Welcome to Fintech Learning 🚀</h1>
       <p className="mt-4 text-lg text-gray-300">Learn micro-investing interactively!</p>
+      
+      {/* Add LoginButton to the page */}
+      <LoginButton />
+
       <Link href="/learn">
         <button className="mt-6 bg-blue-500 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-600">
           Start Learning
@@ -13,6 +18,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 // export default function Home() {

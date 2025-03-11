@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LoginButton from "../components/LoginButton"; // Make sure to import LoginButton
 
 export default function Learn() {
   return (
@@ -17,6 +18,10 @@ export default function Learn() {
             💰 Lesson 2: Managing Risk
           </button>
         </Link>
+        <br />
+          {/* Add LoginButton to the page */}
+          <LoginButton />
+          
       </div>
     </main>
   );

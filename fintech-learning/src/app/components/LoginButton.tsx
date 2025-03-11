@@ -1,17 +1,18 @@
+// src/app/components/LoginButton.tsx
 "use client";
 
 import { useState } from "react";
-import firebase from "firebase/compat/app";
 import { auth, provider, signInWithPopup, signOut } from "../firebase/config";
-import { User } from "firebase/auth";
+import { User } from "firebase/auth"; // Import the User type
 
 export default function LoginButton() {
+  // Explicitly type the user state as User | null
   const [user, setUser] = useState<User | null>(null);
 
   const handleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      setUser(result.user);
+      setUser(result.user); // Set the User object
     } catch (error) {
       console.error("Login error:", error);
     }
@@ -19,7 +20,7 @@ export default function LoginButton() {
 
   const handleLogout = async () => {
     await signOut(auth);
-    setUser(null);
+    setUser(null); // Reset the user to null
   };
 
   return (
